@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Grounded Water</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background-image: url('/api/placeholder/1600/900');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(8, 103, 98, 0.7);
+            z-index: 1;
+        }
+        header * {
+            position: relative;
+            z-index: 2;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .logo-space {
+            width: 200px;
+            height: 200px;
+            margin: -100px auto 20px;
+            background: #fff;
+            border: 2px solid #086762;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .content {
+            background: #fff;
+            padding: 30px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .quote {
+            font-style: italic;
+            text-align: center;
+            color: #086762;
+            margin: 30px 0;
+            font-size: 1.2em;
+        }
+        .contact {
+            background: #92d7e6;
+            color: #086762;
+            padding: 30px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #086762;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h2 {
+            color: #086762;
+            border-bottom: 2px solid #92d7e6;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>True Grounded Water</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="logo-space">
+            [Logo Space]
+        </div>
+
+        <div class="content">
+            <p>True Grounded Water boasts excellent mineral quality as it is sourced beneath the strata of a natural watershed. By drinking our water, you are not only quenching your thirst in the best way possible, but you are helping to make a difference in the lives of our community, especially the little precious lives of orphans.</p>
+
+            <p>90% of profits made are sewn back into the community, with the heart being to find orphans a home, to unite in supporting children and widows in need.</p>
+
+            <h2>Our Story</h2>
+            <p>True Grounded Water is bottled on Farm Rietfontein, just outside of Fochville. The family farm, owned by the van der Westhuizen family for 4 generations now, has always boasted exceptional mineral water. The farm has been well-known in the Fochville area as the dairy farm Henorg Melkery, which has supplied milk and various dairy products since 1982.</p>
+
+            <p>Running a dairy is hard work, and when the doors closed due to retirement in early 2022, Henning and Roberta van der Westhuizen saw much potential in the already established factory and abundant water supply on the farm. Henning, a passionate water engineer and Roberta, a primary school teacher, are a dynamic husband and wife team duo.</p>
+
+            <h2>Our Water</h2>
+            <p>True Grounded Water boasts natural minerals which are not easily found in many bottled waters. Magnesium occurs naturally in ample supply in the farm's water, which makes it perfect for the active person on the go.</p>
+        </div>
+
+        <div class="quote">
+            <p>"With joy you will draw water from the wells of salvation." - Isaiah 12:3</p>
+        </div>
+
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: meerkat@vdwater.co.za</p>
+            <p>Cell: 064 737 1611</p>
+            <h3>Address:</h3>
+            <p>Farm Rietfontein<br>Fochville<br>Gauteng<br>South Africa</p>
+        </div>
+
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+</body>
+</html>
