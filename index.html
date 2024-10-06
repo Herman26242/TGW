@@ -58,59 +58,63 @@ header img {
             z-index: 2;
         }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 25px;
-            cursor: pointer;
-            z-index: 1001;
-        }
+/* Align hamburger in the nav bar */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001;
+    padding-right: 30px;
+}
 
-        .hamburger div {
-            height: 4px;
-            background-color: #fff;
-            width: 100%;
-            border-radius: 2px;
-        }
+.hamburger div {
+    height: 4px;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 2px;
+}
 
-        nav {
-            background: var(--primary-color);
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+/* Main styling */
+nav {
+    background: var(--primary-color);
+    padding: 1rem 20px; /* Added padding for spacing */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* Align content within the nav bar */
+    align-items: center; /* Vertically center content */
+}
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: flex-end;
-            max-width: 1200px;
-            margin-right: auto;
-            margin-left: auto;
-            display: none;
-        }
+/* Flexbox layout for nav */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
-        nav ul li {
-            margin: 0 15px;
-        }
+nav ul li {
+    margin: 0 15px;
+}
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
 
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
 
         .logo-space {
             width: 200px;
@@ -182,13 +186,12 @@ header img {
             font-weight: bold;
         }
 
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-                position: absolute;
-                right: 20px;
-                top: 25px;
-            }
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger only on smaller screens */
+    }
+
 
             @media (max-width: 768px) {
     header {
@@ -197,26 +200,27 @@ header img {
     }
 }
 
-            nav ul {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                background: var(--primary-color);
-                position: absolute;
-                top: 60px;
-                left: 0;
-                display: none;
-            }
+nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background: var(--primary-color);
+        position: absolute;
+        top: 60px; /* Dropdown starts just below the nav bar */
+        left: 0;
+        display: none; /* Hidden by default */
+        padding-top: 10px;
+    }
 
-            nav ul li {
-                margin: 10px 0;
-            }
+    nav ul li {
+        margin: 10px 0;
+    }
 
-            nav ul.active {
-                display: flex;
-            }
-        }
+    nav ul.active {
+        display: flex; /* Display flex when active */
+    }
+}
     </style>
 </head>
 <body>
@@ -283,12 +287,21 @@ header img {
     </section>
 
     <script>
-        // Hamburger toggle
+        // Hamburger toggle functionality
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('nav ul');
-
+        const navItems = document.querySelectorAll('nav ul li a');
+    
+        // Toggle nav menu on hamburger click
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+    
+        // Close the menu after a nav item is selected
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active'); // Hide the menu
+            });
         });
     </script>
 </body>
