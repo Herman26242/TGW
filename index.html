@@ -6,16 +6,18 @@
     <title>True Grounded Water</title>
 
     <!-- Favicon -->
-    <link rel="icon" src="images\LG6.png" type="image/x-icon">
-    
+    <link rel="icon" href="images/LG6.png" type="image/x-icon">
+
     <style>
         :root {
             --primary-color: #086762;
             --secondary-color: #92d7e6;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -23,40 +25,63 @@
             margin: 0;
             padding: 60px;
         }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
+
         header {
-            background-image: URL("images/Name_BG.png");
+            background-color: var(--primary-color);
             background-size: cover;
             background-position: center;
-            color: #fff;
-            padding: 100px 0 200px;
-            text-align: center;
+            background-repeat: no-repeat;
+            height: 100vh;
             position: relative;
+            padding: 0;
+            text-align: center;
         }
-        header::after {
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(8, 103, 98, 0.137);
+            background: rgba(8, 103, 98, 0.6); /* Background overlay */
             z-index: 1;
         }
-        header * {
-            position: relative;
-            z-index: 2;
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            z-index: 1001;
         }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+
+        .hamburger div {
+            height: 4px;
+            background-color: #fff;
+            width: 100%;
+            border-radius: 2px;
         }
+
         nav {
             background: var(--primary-color);
             padding: 1rem 0;
@@ -72,10 +97,11 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: flex-end; /* Align to the right */
+            justify-content: flex-end;
             max-width: 1200px;
             margin-right: auto;
             margin-left: auto;
+            display: none;
         }
 
         nav ul li {
@@ -92,6 +118,7 @@
         nav ul li a:hover {
             color: var(--secondary-color);
         }
+
         .logo-space {
             width: 200px;
             height: 200px;
@@ -105,28 +132,58 @@
             position: relative;
             z-index: 3;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards;
-            background-image: url("images/LG6.png"); /* Add your image URL here */
-            background-size: cover; /* Ensures the image covers the entire circle */
-            background-position: center; /* Centers the image within the circle */
+            background-image: url("images/LG6.png");
+            background-size: cover;
+            background-position: center;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                position: absolute;
+                right: 20px;
+                top: 25px;
+            }
+
+            header {
+                padding: 60px 0 120px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                background: var(--primary-color);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                display: none;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
         }
+
         section {
             padding: 50px 0;
         }
+
         section:nth-child(even) {
             background-color: #f4f4f4;
         }
+
         h2 {
             color: var(--primary-color);
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
         }
+
         .quote {
             font-style: italic;
             text-align: center;
@@ -134,30 +191,39 @@
             margin: 30px 0;
             font-size: 1.2em;
         }
+
         #contact {
             background: var(--secondary-color);
             color: var(--primary-color);
         }
+
         .social-links {
             text-align: center;
             margin-top: 20px;
         }
+
         .social-links a {
             color: var(--primary-color);
             margin: 0 10px;
             text-decoration: none;
             font-weight: bold;
         }
+
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <!--<h1>True Grounded Water</h1>-->
+            <img src="images/Name_BG.png" alt="True Grounded Water" />
         </div>
     </header>
 
     <nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <ul>
             <li><a href="#intro">Intro</a></li>
             <li><a href="#our-story">Our Story</a></li>
@@ -166,9 +232,7 @@
         </ul>
     </nav>
 
-    <div class="logo-space">
-        <!-- Image will be applied via CSS -->
-    </div>
+    <div class="logo-space"></div>
 
     <section id="intro">
         <div class="container">
@@ -181,8 +245,8 @@
     <section id="our-story">
         <div class="container">
             <h2>Our Story</h2>
-            <p>True Grounded Water is bottled on Farm Rietfontein, just outside of Fochville. The family farm, owned by the van der Westhuizen family for 4 generations now, has always boasted exceptional mineral water. The farm has been well-known in the Fochville area as the dairy farm Henorg Melkery, which has supplied milk and various dairy products since 1982.</p>
-            <p>Running a dairy is hard work, and when the doors closed due to retirement in early 2022, Henning and Roberta van der Westhuizen saw much potential in the already established factory and abundant water supply on the farm. Henning, a passionate water engineer and Roberta, a primary school teacher, are a dynamic husband and wife team duo.</p>
+            <p>True Grounded Water is bottled on Farm Rietfontein, just outside of Fochville. The family farm, owned by the van der Westhuizen family for 4 generations now, has always boasted exceptional mineral water.</p>
+            <p>The farm has been well-known in the Fochville area as the dairy farm Henorg Melkery, which has supplied milk and various dairy products since 1982.</p>
         </div>
     </section>
 
@@ -211,13 +275,12 @@
     </section>
 
     <script>
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // Hamburger toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     </script>
 </body>
