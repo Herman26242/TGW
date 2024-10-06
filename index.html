@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>True Grounded Water</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/LG6.png" type="image/x-icon">
-
+    <title>Logo Overlap Example</title>
     <style>
         :root {
             --primary-color: #086762;
@@ -27,25 +23,26 @@
         }
 
         .container {
-    width: 90vw;   /* 90% of the viewport width */
-    max-width: 1200px; /* Ensures it doesn't get larger than 1200px */
-    margin: auto;  /* Centers the container */
-    padding: 0 5vw; /* Adds padding based on viewport width */
-    min-height: auto; /* Ensures the height is based on the content */
-}
-header {
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    padding: 0 20px;
-    height: auto; /* Let the height adjust based on the image */
-}
+            width: 90vw;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 5vw;
+            min-height: auto;
+        }
 
-header img {
-    width: 100%; /* Make the image fill the width of the header */
-    height: auto; /* Automatically adjust the height to maintain the aspect ratio */
-    display: block; /* Removes any gap under the image */
-}
+        header {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            padding: 0 20px;
+            height: auto;
+        }
+
+        header img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
         header::before {
             content: '';
@@ -54,72 +51,51 @@ header img {
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(8, 103, 98, 0); /* Adjust overlay as needed */
+            background: rgba(8, 103, 98, 0);
             z-index: 2;
         }
 
-/* Align hamburger in the nav bar */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    z-index: 1001;
-    padding-right: 30px;
-}
+        nav {
+            background: var(--primary-color);
+            padding: 1rem 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center; /* Center navigation items */
+            align-items: center;
+        }
 
-.hamburger div {
-    height: 4px;
-    background-color: #fff;
-    width: 100%;
-    border-radius: 2px;
-}
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center navigation items */
+            align-items: center;
+        }
 
-/* Main styling */
-nav {
-    background: var(--primary-color);
-    padding: 1rem 20px; /* Added padding for spacing */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between; /* Align content within the nav bar */
-    align-items: center; /* Vertically center content */
-}
+        nav ul li {
+            margin: 0 15px;
+        }
 
-/* Flexbox layout for nav */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: var(--secondary-color);
-}
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
 
         .logo-space {
-            width: 200px;
+            width: 200px; /* Default size */
             height: 200px;
-            margin: -100px auto 20px;
+            margin: -100px auto 20px; /* Adjusted margin to keep overlap */
             background: #fff;
             border: 2px solid var(--primary-color);
             border-radius: 50%;
@@ -128,10 +104,43 @@ nav ul li a:hover {
             align-items: center;
             position: relative;
             z-index: 3;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             background-image: url("images/LG6.png");
             background-size: cover;
             background-position: center;
+        }
+
+        /* Media queries for responsive logo */
+        @media (max-width: 1200px) {
+            .logo-space {
+                width: 180px; /* Adjust size for medium screens */
+                height: 180px;
+                margin: -90px auto 20px; /* Adjusted margin */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .logo-space {
+                width: 160px; /* Adjust size for smaller screens */
+                height: 160px;
+                margin: -80px auto 20px; /* Adjusted margin */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-space {
+                width: 140px; /* Adjust size for mobile screens */
+                height: 140px;
+                margin: -70px auto 20px; /* Adjusted margin */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-space {
+                width: 120px; /* Adjust size for very small screens */
+                height: 120px;
+                margin: -60px auto 20px; /* Adjusted margin */
+            }
         }
 
         section {
@@ -140,22 +149,20 @@ nav ul li a:hover {
             background-position: center;
         }
 
-        /* No background image for the intro section */
         #intro {
             background-color: #fff;
         }
 
-        /* Custom background images for other sections */
         #our-story {
-            background-image: url("images/our-story-bg.jpg"); /* Replace with your image */
+            background-image: url("images/our-story-bg.jpg");
         }
 
         #our-water {
-            background-image: url("images/our-water-bg.jpg"); /* Replace with your image */
+            background-image: url("images/our-water-bg.jpg");
         }
 
         #contact {
-            background-image: url("images/contact-bg.jpg"); /* Replace with your image */
+            background-image: url("images/contact-bg.jpg");
             background-color: var(--secondary-color);
             color: var(--primary-color);
         }
@@ -186,41 +193,6 @@ nav ul li a:hover {
             font-weight: bold;
         }
 
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex; /* Show hamburger only on smaller screens */
-    }
-
-
-            @media (max-width: 768px) {
-    header {
-        padding: 60px 0 120px;
-        height: auto; /* Ensure height is dynamic on smaller screens */
-    }
-}
-
-nav ul {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background: var(--primary-color);
-        position: absolute;
-        top: 60px; /* Dropdown starts just below the nav bar */
-        left: 0;
-        display: none; /* Hidden by default */
-        padding-top: 10px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul.active {
-        display: flex; /* Display flex when active */
-    }
-}
     </style>
 </head>
 <body>
@@ -286,23 +258,5 @@ nav ul {
         </div>
     </section>
 
-    <script>
-        // Hamburger toggle functionality
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('nav ul');
-        const navItems = document.querySelectorAll('nav ul li a');
-    
-        // Toggle nav menu on hamburger click
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    
-        // Close the menu after a nav item is selected
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('active'); // Hide the menu
-            });
-        });
-    </script>
 </body>
 </html>
