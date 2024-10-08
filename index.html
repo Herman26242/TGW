@@ -80,13 +80,13 @@
         }
 
         nav ul li {
-            margin: 0 10px;
+            margin: 0 8px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: normal;
             transition: color 0.3s ease;
         }
 
@@ -111,6 +111,14 @@
             background-size: cover;
             background-position: center;
         }
+
+        .below-logo-img {
+            display: block;
+            margin: 20px auto; /* Center the image and add some spacing */
+            max-width: 100%;
+            height: auto; /* Ensure responsiveness */
+        }
+
 
         /* Media queries for responsive logo */
         @media (max-width: 1200px) {
@@ -200,10 +208,11 @@
 <body>
     <header>
         <div class="container">
-            <img src="images/Name_BG.png" alt="True Grounded Water" />
+            <img src="images/Name_BG_Crop.png" alt="True Grounded Water" />
         </div>
     </header>
 
+   
     <nav>
         <div class="hamburger">
             <div></div>
@@ -219,6 +228,10 @@
     </nav>
 
     <div class="logo-space"></div>
+
+     <!-- New image added below the logo -->
+     <img src="images/Name1.png" alt="Description of the new image" class="below-logo-img">
+
 
     <section id="intro">
         <div class="container">
