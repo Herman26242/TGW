@@ -28,7 +28,7 @@
             margin: auto;
             padding: 0 5vw;
             min-height: auto;
-            padding-top: 40px;
+            padding-top: 10px;
         }
 
         header {
@@ -117,7 +117,94 @@
             margin: 20px auto; /* Center the image and add some spacing */
             max-width: 100%;
             height: auto; /* Ensure responsiveness */
+            padding-left: 40px;
+            padding-right: 40px;
         }
+
+        #quote-section {
+    padding: 5px 0; /* Adjust padding as needed */
+    background-color: var(--secondary-color); /* Optional: Set a background color */
+    text-align: center; /* Center-align text and image */
+}
+
+.quote {
+    font-size: 1.5em; /* Increase font size for emphasis */
+    color: var(--primary-color); /* Use the primary color */
+    margin-bottom: 20px; /* Space between quote and image */
+}
+
+.quote-image {
+    max-width: 80%; /* Image will take up to 80% of the container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+
+/* Container for story layout with flexbox */
+.story-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Space between the image and text */
+    padding: 0px;
+}
+
+/* Image styling */
+.story-image {
+    max-width: 40%; /* The image will take up 40% of the container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional styling for rounded corners */
+}
+
+/* Text container styling */
+.story-text {
+    flex: 1; /* Text will take up the remaining space */
+}
+
+/* Responsive layout - Stack image and text vertically on smaller screens */
+@media (max-width: 768px) {
+    .story-layout {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Center align text on smaller screens */
+    }
+
+    .story-image {
+        max-width: 100%; /* Image takes up full width */
+    }
+}
+
+/* Container for water layout with flexbox */
+.water-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Space between the text and image */
+    padding: 0px;
+}
+
+/* Text container styling */
+.water-text {
+    flex: 1; /* Text will take up the remaining space */
+}
+
+/* Image styling */
+.water-image {
+    max-width: 40%; /* The image will take up 40% of the container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional styling for rounded corners */
+}
+
+/* Responsive layout - Stack image below text on smaller screens */
+@media (max-width: 768px) {
+    .water-layout {
+        flex-direction: column; /* Stack image below text */
+        text-align: center; /* Center align text on smaller screens */
+    }
+
+    .water-image {
+        max-width: 100%; /* Image takes up full width */
+    }
+}
 
 
         /* Media queries for responsive logo */
@@ -154,7 +241,7 @@
         }
 
         section {
-            padding: 50px 0;
+            padding: 5px 0;
             background-size: cover;
             background-position: center;
         }
@@ -165,10 +252,12 @@
 
         #our-story {
             background-image: url("images/our-story-bg.jpg");
+            padding: 20px 0; /* Reduced padding for this section */
         }
 
         #our-water {
             background-image: url("images/our-water-bg.jpg");
+            padding: 20px 0; /* Reduced padding for this section */
         }
 
         #contact {
@@ -242,22 +331,29 @@
     </section>
 
     <section id="our-story">
-        <div class="container">
-            <h2>Our Story</h2>
-            <p>True Grounded Water is bottled on Farm Rietfontein, just outside of Fochville. The family farm, owned by the van der Westhuizen family for 4 generations now, has always boasted exceptional mineral water.</p>
-            <p>The farm has been well-known in the Fochville area as the dairy farm Henorg Melkery, which has supplied milk and various dairy products since 1982.</p>
+        <div class="container story-layout">
+            <img src="images/LG_Meaning.png" alt="Our Story Image" class="story-image">
+            <div class="story-text">
+                <h2>Our Story</h2>
+                <p>True Grounded Water is bottled on Farm Rietfontein, just outside of Fochville. The family farm, owned by the van der Westhuizen family for 4 generations now, has always boasted exceptional mineral water.</p>
+                <p>The farm has been well-known in the Fochville area as the dairy farm Henorg Melkery, which has supplied milk and various dairy products since 1982.</p>
+            </div>
         </div>
     </section>
 
     <section id="our-water">
-        <div class="container">
-            <h2>Our Water</h2>
-            <p>True Grounded Water boasts natural minerals which are not easily found in many bottled waters. Magnesium occurs naturally in ample supply in the farm's water, which makes it perfect for the active person on the go.</p>
-            <div class="quote">
-                <p>"With joy you will draw water from the wells of salvation." - Isaiah 12:3</p>
+        <div class="container water-layout">
+            <div class="water-text">
+                <h2>Our Water</h2>
+                <p>True Grounded Water boasts natural minerals which are not easily found in many bottled waters. Magnesium occurs naturally in ample supply in the farm's water, which makes it perfect for the active person on the go.</p>
+                <div class="quote">
+                    <p>"With joy you will draw water from the wells of salvation." - Isaiah 12:3</p>
+                </div>
             </div>
+            <img src="images/Comp.png" alt="Our Water Image" class="water-image">
         </div>
     </section>
+    
 
     <section id="contact">
         <div class="container">
