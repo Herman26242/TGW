@@ -60,24 +60,23 @@
         }
 
         nav {
-            background: var(--primary-color);
-            padding: 1rem 5px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center; /* Center navigation items */
-            align-items: center;
-        }
+    background: var(--primary-color);
+    padding: 1rem 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* Added this line */
+    align-items: center;
+}
 
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center; /* Center navigation items */
             align-items: center;
             flex-wrap: nowrap; /* Prevent wrapping to the next line */
         }
@@ -217,6 +216,35 @@
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional styling for rounded corners */
 }
+
+.hamburger {
+    margin-left: auto; /* Aligns the hamburger to the right */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+    .hamburger div {
+        width: 30px;
+        height: 4px;
+        background-color: #086762;
+        margin: 5px;
+        transition: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: flex; /* Show hamburger menu on mobile */
+            flex-direction: column; /* Align bars vertically */
+        }
+
+        nav ul {
+            display: none; /* Hide nav links by default */
+            flex-direction: column; /* Stack links */
+        }
+
+        nav ul.active {
+            display: flex; /* Show links when active */
+        }
+    }
 
 /* Responsive layout - Stack image below text on smaller screens */
 @media (max-width: 768px) {
@@ -438,6 +466,21 @@
     <footer>
         <p>&copy; 2024 True Grounded Water. All Rights Reserved.</p>
     </footer>   
+
+    <script>
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const navMenu = document.querySelector('nav ul');
+    
+        // Function to close the menu
+        function closeMenu() {
+            navMenu.classList.remove('open'); // Assuming you will add a class for opening/closing
+        }
+    
+        // Attach click event to each nav link
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
 
 </body>
 </html>
