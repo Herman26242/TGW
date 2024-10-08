@@ -61,7 +61,7 @@
 
         nav {
             background: var(--primary-color);
-            padding: 1rem 10px;
+            padding: 1rem 5px;
             position: fixed;
             top: 0;
             width: 100%;
@@ -79,6 +79,7 @@
             display: flex;
             justify-content: center; /* Center navigation items */
             align-items: center;
+            flex-wrap: nowrap; /* Prevent wrapping to the next line */
         }
 
         nav ul li {
@@ -172,6 +173,27 @@
 
     .story-image {
         max-width: 100%; /* Image takes up full width */
+    }
+}
+
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack nav items vertically on mobile */
+        align-items: center; /* Center nav items */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack the list items vertically */
+        align-items: center; /* Center the items */
+    }
+
+    nav ul li {
+        margin: 4px 0; /* Vertical spacing between nav items */
+    }
+    nav {
+        padding: 0.5rem; /* Adjust padding for smaller screens */
     }
 }
 
@@ -413,7 +435,9 @@
     </section>
     
     
-    
+    <footer>
+        <p>&copy; 2024 True Grounded Water. All Rights Reserved.</p>
+    </footer>   
 
 </body>
 </html>
