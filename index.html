@@ -145,27 +145,50 @@
 
 /* General styling for the section */
 #our-story-heading {
-    padding: 40px 20px; /* Space around the heading */
+    padding: 40px 5px; /* Space around the heading */
     text-align: left;
 }
 
-/* Container for the new three-column layout */
+/* Grid layout for the section */
 .story-layout {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Two columns of equal width */
+    grid-template-rows: auto auto;   /* Two rows */
+    gap: 20px;                       /* Space between the blocks */
+    align-items: center;             /* Center content within the blocks */
+    text-align: center;
 }
 
-/* Styling for the two images */
-.story-image {
-    width: 30%; /* Each image takes up 40% of the container width */
+.story-text {
+    grid-column: 1;                  /* Block 1: Text in the first column */
+    grid-row: 1;                     /* In the first row */
+}
+
+.block-2 {
+    grid-column: 1;                  /* Block 2: First image in the first column */
+    grid-row: 2;                     /* In the second row */
+}
+
+.block-3-4 {
+    grid-column: 2;                  /* Block 3 and 4: Second image spans two rows */
+    grid-row: 1 / span 2;            /* Span both rows */
+}
+
+.story-image-1 {
+    width: 80%;                     /* First image takes full block width */
     height: auto;
     border-radius: 10px;
     object-fit: scale-down;
-
 }
+
+.story-image-2 {
+    width: 60%;                     /* Second image spans both blocks */
+    height: auto;
+    border-radius: 10px;
+    object-fit: scale-down;
+}
+
+
 
 /* Styling for the text */
 .story-text {
@@ -208,11 +231,9 @@
 /* Container for water layout with flexbox */
 .water-layout {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px; /* Space between the text and image */
-    padding: 0px;
-    align-items: flex-start;
+    flex-direction: column; /* Stack the text and image vertically */
+    align-items: center;    /* Center both text and image */
+    text-align: center;     /* Center the text content */
 }
 
 /* Text container styling */
@@ -222,10 +243,9 @@
 
 /* Image styling */
 .water-image {
-    max-width: 40%; /* The image will take up 40% of the container width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional styling for rounded corners */
-    object-fit: scale-down;
+    max-width: 30%;        /* Ensure the image is responsive */
+    height: auto;           /* Maintain image aspect ratio */
+    margin-top: 20px;       /* Add some spacing between the text and image */
 }
 
     @media (max-width: 768px) {
@@ -247,12 +267,13 @@
 /* Responsive layout - Stack image below text on smaller screens */
 @media (max-width: 768px) {
     .water-layout {
-        flex-direction: column; /* Stack image below text */
+
         text-align: center; /* Center align text on smaller screens */
     }
 
     .water-image {
-        max-width: 100%; /* Image takes up full width */
+        max-width: 80%; /* Image takes up full width */
+        align-items: center;
     }
 }
 
@@ -312,7 +333,7 @@
 
         #contact {
             background-image: url("images/contact-bg.jpg");
-            background-color: var(--secondary-color);
+            background-color: var(#92d7e6;);
             color: var(--primary-color);
         }
 
@@ -320,6 +341,7 @@
             color: var(--primary-color);
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
+            text-align: left;
         }
 
         .quote {
@@ -338,13 +360,14 @@
       /* General Contact Section Styling */
 .contact-section {
   padding: 40px 0;
-  background-color: #f9f9f9;
+  background-color: #92d7e6;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  text-align: center;
 }
 
 .contact-content {
@@ -356,6 +379,7 @@
 .contact-left{
   flex: 1;
   padding: 20px;
+    text-align: left;
 }
 
 .contact-middle{
@@ -398,7 +422,7 @@
 }
 
 .order-btn {
-      background-color: #ff6600;
+      background-color: #ff6f61;
       color: white;
       padding: 15px 30px;
       text-align: center;
@@ -520,32 +544,38 @@
     </div>
 </section>
 
-    <section id="our-story">
-        <div class="container story-layout">
-
-            <div class="story-text">
-                <p>True Grounded Water is bottled on Farm Rietfontein, just outside of Fochville. The family farm, owned by the van der Westhuizen family for 4 generations now, has always boasted exceptional mineral water.</p>
-                <p>The farm has been well-known in the Fochville area as the dairy farm Henorg Melkery, which has supplied milk and various dairy products since 1982.</p>
-            </div>
-            <!-- First image -->
-            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/LG_Meaning.png" alt="Our Story Image 1" class="story-image">
-            <!-- Second image -->
-            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/LG_N2.png" alt="Our Story Image 2" class="story-image">
-            <!-- Story text next to the two images -->
-            
+<section id="our-story">
+    <div class="container story-layout">
+        <!-- Block 1: Text -->
+        <div class="story-text">
+            <p>True Grounded Water is bottled on Farm Rietfontein, just outside of Fochville. The family farm, owned by the van der Westhuizen family for 4 generations now, has always boasted exceptional mineral water.</p>
+            <p>The farm has been well-known in the Fochville area as the dairy farm Henorg Melkery, which has supplied milk and various dairy products since 1982.</p>
         </div>
-    </section>
+        <!-- Block 2: First image -->
+        <div class="block-2">
+            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/LG_Meaning.png" alt="Our Story Image 1" class="story-image story-image-1">
+        </div>
+        <!-- Block 3 and 4: Second image -->
+        <div class="block-3-4">
+            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/LG_N2.png" alt="Our Story Image 2" class="story-image story-image-2">
+        </div>
+    </div>
+</section>
+
 
     <section id="our-water">
         <div class="container water-layout">
-           
-            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/Comp.png" alt="Our Water Image" class="water-image">
             <div class="water-text">
                 <h2>Our Water</h2>
                 <p>True Grounded Water boasts natural minerals which are not easily found in many bottled waters. Magnesium occurs naturally in ample supply in the farm's water, which makes it perfect for the active person on the go.</p>
             </div>
+            <!-- Move the image here -->
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/Comp.png" alt="Our Water Image" class="water-image">
+            </div>
         </div>
     </section>
+    
     
 
 <!-- Contact Section -->
@@ -555,16 +585,13 @@
         <!-- Left Column: Email, Phone, and Social Media -->
         <div class="contact-left">
           <h3>Contact Us</h3>
-          <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
-          <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+          <p>Email: <a href="mailto:meerkat@vdwater.co.za">meerkat@vdwater.co.za</a></p>
+          <p>Phone: <a href="tel:+27647371611">064 737 1611</a></p>
           <div class="social-media">
-            <a href="https://facebook.com" target="_blank" class="social-icon">
+            <a href="https://www.facebook.com/profile.php?id=61566142757810&mibextid=LQQJ4d" target="_blank" class="social-icon">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://twitter.com" target="_blank" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" class="social-icon">
+            <a href="https://www.instagram.com/true_grounded_water/profilecard/?igsh=eG85ZnFtdWRwNDQ4" target="_blank" class="social-icon">
               <i class="fab fa-instagram"></i>
             </a>
           </div>
@@ -578,9 +605,10 @@
         <!-- Right Column: Address -->
         <div class="contact-right">
           <h3>Our Address</h3>
-          <p>1234 Street Name,</p>
-          <p>City, Country</p>
-          <p>Zip Code</p>
+          <p>Farm Rietfontein,</p>
+          <p>Fochville</p>
+          <p>Gauteng</p>
+          <p>South Africa</p>
         </div>
       </div>
     </div>
@@ -609,15 +637,29 @@
         });
     </script>
 
-    <!-- Popup Modal Container -->
+<!-- Popup Modal Container -->
 <div id="orderModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h3>Place Your Order</h3>
-      <p>Fill in your details and submit the form to place an order.</p>
+      <h2>Place Your Order</h2>
+      <h3>We are currently only bottling 500ml still water. Bottles come in packs of 10.</h3>
+      <p>
+        For local orders in Potchefstroom, please place your order and collect from 9 Gerrit Dekker St. You will be notified when your order is ready for collection.<br>
+    </p>
+        <h3>Large bulk orders qualify for delivery.</h3>
+      
+      <p>
+        For orders around South Africa, water can be shipped in the following quantities: <br>
+        • 20x 500ml bottles - R370<br>
+        • 40x 500ml bottles - R620<br>
+        <em>*Prices include water, courier and packaging.</em>
+      </p>
+      <p>All orders to please be emailed to <a href="mailto:meerkat@vdwater.co.za">meerkat@vdwater.co.za</a> or sent via WhatsApp to <a href="tel:+27647371611">064 737 1611</a>.</p>
+      <p>Thank you for helping us make a difference in our community.</p>
       <!-- Add your form or content here -->
     </div>
-  </div>
+</div>
+
   
   <!-- JavaScript to handle Modal -->
   <script>
