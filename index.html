@@ -117,11 +117,12 @@
 
         .below-logo-img {
             display: block;
-            margin: 20px auto; /* Center the image and add some spacing */
+            margin: 5px auto; /* Center the image and add some spacing */
             max-width: 100%;
             height: auto; /* Ensure responsiveness */
-            padding-left: 40px;
-            padding-right: 40px;
+            padding-left: 0px;
+            padding-right: 0px;
+            align-items: center;
         }
 
         #quote-section {
@@ -143,39 +144,38 @@
 }
 
 
-/* Container for story layout with flexbox */
+/* Container for the new three-column layout */
 .story-layout {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 20px; /* Space between the image and text */
-    padding: 0px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* Image styling */
+/* Styling for the two images */
 .story-image {
-    max-width: 40%; /* The image will take up 40% of the container width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional styling for rounded corners */
+    width: 30%; /* Each image takes up 40% of the container width */
+    height: auto;
+    border-radius: 10px;
 }
 
-/* Text container styling */
+/* Styling for the text */
 .story-text {
-    flex: 1; /* Text will take up the remaining space */
+    flex: 1; /* Text takes up the remaining space */
 }
 
-/* Responsive layout - Stack image and text vertically on smaller screens */
+/* Responsive layout: stack images and text on smaller screens */
 @media (max-width: 768px) {
     .story-layout {
-        flex-direction: column; /* Stack image and text vertically */
-        text-align: center; /* Center align text on smaller screens */
+        flex-direction: column;
+        text-align: center;
     }
 
     .story-image {
-        max-width: 100%; /* Image takes up full width */
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
-
 
 /* Media query for mobile screens */
 @media (max-width: 768px) {
@@ -217,19 +217,6 @@
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional styling for rounded corners */
 }
-
-.hamburger {
-    margin-left: auto; /* Aligns the hamburger to the right */
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-    .hamburger div {
-        width: 30px;
-        height: 4px;
-        background-color: #086762;
-        margin: 5px;
-        transition: 0.4s;
-    }
 
     @media (max-width: 768px) {
         .hamburger {
@@ -415,22 +402,29 @@
 
     <section id="our-story">
         <div class="container story-layout">
-            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/LG_Meaning.png" alt="Our Story Image" class="story-image">
+
             <div class="story-text">
                 <h2>Our Story</h2>
                 <p>True Grounded Water is bottled on Farm Rietfontein, just outside of Fochville. The family farm, owned by the van der Westhuizen family for 4 generations now, has always boasted exceptional mineral water.</p>
                 <p>The farm has been well-known in the Fochville area as the dairy farm Henorg Melkery, which has supplied milk and various dairy products since 1982.</p>
             </div>
+            <!-- First image -->
+            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/LG_Meaning.png" alt="Our Story Image 1" class="story-image">
+            <!-- Second image -->
+            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/BTL.png" alt="Our Story Image 2" class="story-image">
+            <!-- Story text next to the two images -->
+            
         </div>
     </section>
 
     <section id="our-water">
         <div class="container water-layout">
+           
+            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/Comp.png" alt="Our Water Image" class="water-image">
             <div class="water-text">
                 <h2>Our Water</h2>
                 <p>True Grounded Water boasts natural minerals which are not easily found in many bottled waters. Magnesium occurs naturally in ample supply in the farm's water, which makes it perfect for the active person on the go.</p>
             </div>
-            <img src="https://raw.githubusercontent.com/Herman26242/TGW/main/images/Comp.png" alt="Our Water Image" class="water-image">
         </div>
     </section>
     
