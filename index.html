@@ -143,6 +143,11 @@
     border-radius: 10px; /* Optional: Rounded corners */
 }
 
+/* General styling for the section */
+#our-story-heading {
+    padding: 40px 20px; /* Space around the heading */
+    text-align: left;
+}
 
 /* Container for the new three-column layout */
 .story-layout {
@@ -150,6 +155,7 @@
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 /* Styling for the two images */
@@ -157,6 +163,8 @@
     width: 30%; /* Each image takes up 40% of the container width */
     height: auto;
     border-radius: 10px;
+    object-fit: scale-down;
+
 }
 
 /* Styling for the text */
@@ -204,6 +212,7 @@
     align-items: center;
     gap: 20px; /* Space between the text and image */
     padding: 0px;
+    align-items: flex-start;
 }
 
 /* Text container styling */
@@ -216,6 +225,7 @@
     max-width: 40%; /* The image will take up 40% of the container width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional styling for rounded corners */
+    object-fit: scale-down;
 }
 
     @media (max-width: 768px) {
@@ -325,39 +335,140 @@
             margin-top: 20px;
         }
 
-        /* Adjust social icons in left column */
-        .social-links {
-            margin: 20px 0; /* Space above and below the social links */
-            display: flex; /* Use flexbox for social links */
-            align-items: center; /* Center icons vertically */
-        }
-        .social-icon:hover {
-            transform: scale(1.1); /* Scale up slightly on hover */
-        }
+      /* General Contact Section Styling */
+.contact-section {
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
 
-        .social-icon {
-            font-size: 40px; /* Increased size of icons */
-            margin-right: 15px; /* Space between icons */
-            transition: transform 0.2s; /* Smooth scaling effect on hover */
-            color: var(--primary-color); /* Color matching your theme */
-        }
-        .social-icon:hover {
-            transform: scale(1.1); /* Scale up slightly on hover */
-        }
-        .contact-table {
-            display: flex; /* Use flexbox for layout */
-            justify-content: space-between; /* Space between columns */
-            padding: 20px 0; /* Space above and below the contact table */
-        }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-        .contact-left {
-            flex: 1; /* Allow left side to grow */
-            padding-right: 20px; /* Space between left and right columns */
-        }
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
-        .contact-right {
-            flex: 1; /* Allow right side to grow */
-        }
+.contact-left{
+  flex: 1;
+  padding: 20px;
+}
+
+.contact-middle{
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-right {
+    flex: 1;
+    padding: 20px;
+    text-align: right;
+}
+
+.contact-left h3, .contact-right h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-left p, .contact-right p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Social Media Icon Styling */
+.social-media {
+  margin-top: 20px;
+}
+
+.social-icon {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 24px;
+  color: #555;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #ff6600; /* Change icon color on hover */
+}
+
+.order-btn {
+      background-color: #ff6600;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      display: block;
+      max-width: 200px;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+
+/* Modal Popup Styling */
+.modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1000; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    }
+
+    .modal-content {
+      background-color: #92d7e6; /* Shading color */
+      margin: 10% auto; /* Center the modal vertically and horizontally */
+      padding: 20px;
+      border-radius: 10px; /* Rounded corners */
+      width: 80%; /* Responsive width */
+      max-width: 500px; /* Maximum width */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .close {
+      color: #333;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #ff6600;
+      text-decoration: none;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .contact-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-left, .contact-middle{
+        text-align: center;
+      }
+
+      .contact-right {
+        text-align: right;
+      }
+    }
+
+
 
     </style>
 </head>
@@ -392,19 +503,27 @@
     <section id="intro">
         <div class="container">
             <h2>Introduction</h2>
+            <div class="section-content">
             <p>True Grounded Water boasts excellent mineral quality as it is sourced beneath the strata of a natural watershed. By drinking our water, you are not only quenching your thirst in the best way possible, but you are helping to make a difference in the lives of our community, especially the little precious lives of orphans.</p>
             <p>90% of profits made are sewn back into the community, with the heart being to find orphans a home, to unite in supporting children and widows in need.</p>
+            </div>
             <div class="quote">
                 <p>"With joy you will draw water from the wells of salvation." - Isaiah 12:3</p>
             </div>
         </div>
     </section>
 
+    <!-- Heading Section -->
+<section id="our-story-heading">
+    <div class="container">
+        <h2>Our Story</h2>
+    </div>
+</section>
+
     <section id="our-story">
         <div class="container story-layout">
 
             <div class="story-text">
-                <h2>Our Story</h2>
                 <p>True Grounded Water is bottled on Farm Rietfontein, just outside of Fochville. The family farm, owned by the van der Westhuizen family for 4 generations now, has always boasted exceptional mineral water.</p>
                 <p>The farm has been well-known in the Fochville area as the dairy farm Henorg Melkery, which has supplied milk and various dairy products since 1982.</p>
             </div>
@@ -429,32 +548,45 @@
     </section>
     
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-table">
-                <div class="contact-left">
-                    <p>Email: <a href="mailto:meerkat@vdwater.co.za">meerkat@vdwater.co.za</a></p>
-                    <p>Cell: <a href="tel:+27647371611">064 737 1611</a></p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61566142757810&mibextid=LQQJ4d" target="_blank">
-                            <i class="fab fa-facebook-f social-icon"></i>
-                        </a>
-                        <a href="https://www.instagram.com/true_grounded_water/profilecard/?igsh=eG85ZnFtdWRwNDQ4" target="_blank">
-                            <i class="fab fa-instagram social-icon"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-right">
-                    <h3>Address:</h3>
-                    <p> Farm Rietfontein<br>
-                        Fochville<br>
-                        Gauteng<br>
-                        South Africa
-                    </p>
-                </div>
-            </div>
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+      <div class="contact-content">
+        <!-- Left Column: Email, Phone, and Social Media -->
+        <div class="contact-left">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+          <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+          <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
+  
+      <!-- Middle Column: Order Now Button -->
+      <div class="contact-middle">
+        <a href="#" class="order-btn" id="orderNowBtn">Order Now</a>
+      </div>
+  
+        <!-- Right Column: Address -->
+        <div class="contact-right">
+          <h3>Our Address</h3>
+          <p>1234 Street Name,</p>
+          <p>City, Country</p>
+          <p>Zip Code</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
     </section>
     
     
@@ -476,6 +608,47 @@
             link.addEventListener('click', closeMenu);
         });
     </script>
+
+    <!-- Popup Modal Container -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Place Your Order</h3>
+      <p>Fill in your details and submit the form to place an order.</p>
+      <!-- Add your form or content here -->
+    </div>
+  </div>
+  
+  <!-- JavaScript to handle Modal -->
+  <script>
+    // Get modal element
+    var modal = document.getElementById("orderModal");
+    // Get the button that opens the modal
+    var btn = document.getElementById("orderNowBtn");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+  
+    // When the user clicks the button, open the modal and prevent default action
+    btn.onclick = function(event) {
+      event.preventDefault(); // Prevent the default anchor behavior
+      modal.style.display = "block";
+    }
+  
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  
+  </body>
+  </html>
 
 </body>
 </html>
