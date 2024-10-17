@@ -462,6 +462,17 @@
       color: #333;
     }
 
+    
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* Take almost the full width on smaller screens */
+    max-width: none; /* Remove the maximum width limit */
+    margin: 10% auto; /* Adjust the margin for smaller screens */
+    max-height: 80vh; /* Adjust height to fit the screen */
+  }
+}    
+
     .close {
       color: #333;
       float: right;
