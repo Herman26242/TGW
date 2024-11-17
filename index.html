@@ -374,6 +374,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  background-color: var(--secondary-color);
 }
 
 .contact-left{
@@ -445,6 +446,8 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+      align-items: centre;
+      overflow: auto;
     }
 
     .modal-content {
@@ -461,6 +464,15 @@
       margin-top: 0;
       color: #333;
     }
+
+    
+/* Responsive Modal Adjustments */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Take up almost the full width on smaller screens */
+        max-width: none; /* Remove maximum width limit */
+    }
+}  
 
     .close {
       color: #333;
@@ -529,7 +541,7 @@
             <h2>Introduction</h2>
             <div class="section-content">
             <p>True Grounded Water boasts excellent mineral quality as it is sourced beneath the strata of a natural watershed. By drinking our water, you are not only quenching your thirst in the best way possible, but you are helping to make a difference in the lives of our community, especially the little precious lives of orphans.</p>
-            <p>90% of profits made are sewn back into the community, with the heart being to find orphans a home, to unite in supporting children and widows in need.</p>
+            <p>90% of profits made are sown back into the community, with the heart being to find orphans a home, to unite in supporting children and widows in need.</p>
             </div>
             <div class="quote">
                 <p>"With joy you will draw water from the wells of salvation." - Isaiah 12:3</p>
@@ -579,13 +591,13 @@
     
 
 <!-- Contact Section -->
-<section class="contact-section">
+<section id="contact">
     <div class="container">
       <div class="contact-content">
         <!-- Left Column: Email, Phone, and Social Media -->
         <div class="contact-left">
           <h3>Contact Us</h3>
-          <p>Email: <a href="mailto:meerkat@vdwater.co.za">meerkat@vdwater.co.za</a></p>
+          <p>Email: <a href="mailto:sales@truegroundedwater.co.za">sales@truegroundedwater.co.za</a></p>
           <p>Phone: <a href="tel:+27647371611">064 737 1611</a></p>
           <div class="social-media">
             <a href="https://www.facebook.com/profile.php?id=61566142757810&mibextid=LQQJ4d" target="_blank" class="social-icon">
@@ -654,7 +666,7 @@
         • 40x 500ml bottles - R620<br>
         <em>*Prices include water, courier and packaging.</em>
       </p>
-      <p>All orders to please be emailed to <a href="mailto:meerkat@vdwater.co.za">meerkat@vdwater.co.za</a> or sent via WhatsApp to <a href="tel:+27647371611">064 737 1611</a>.</p>
+      <p>All orders to please be emailed to <a href="mailto:sales@truegroundedwater.co.za">sales@truegroundedwater.co.za</a> or sent via WhatsApp to <a href="tel:+27647371611">064 737 1611</a>.</p>
       <p>Thank you for helping us make a difference in our community.</p>
       <!-- Add your form or content here -->
     </div>
